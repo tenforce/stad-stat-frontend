@@ -3,3 +3,13 @@ $roboto-font-path: '../assets/';
 
 // Materialize styles
 @import "materialize";
+
+
+.fact {
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+    margin: 10px;
+    display: inline-block;
+    padding: 10px;
+}
