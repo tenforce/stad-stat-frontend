@@ -5,11 +5,11 @@
     left
   </div>
 
-  <div class="col s9 facts">
-    {{#liquid-bind facts as |factsVersion|}}
-      {{#each factsVersion as |fact|}}
-        <div class="fact" {{action "clickFact" fact}}>
-          facts here!
+  <div class="col s9 topics">
+    {{#liquid-bind topics as |topicsVersion|}}
+      {{#each topicsVersion key="id" as |topic|}}
+        <div class="topic" topic-id={{topic.title}} {{action "clickTopic" topic}}>
+          topics here!
         </div>
       {{/each}}
     {{/liquid-bind}}
