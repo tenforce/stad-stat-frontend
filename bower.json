@@ -1,5 +1,6 @@
 {
   "name": "stad-stat",
   "dependencies": {
+    "materialize": "0.97.6"
   }
 }
