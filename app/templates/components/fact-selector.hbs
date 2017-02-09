@@ -1,1 +1,14 @@
-{{yield}}
+{{#power-select-multiple
+   search=(action "searchRepo")
+   selected=currentTopics
+   onchange=updateSelected
+   as |topic|
+}}
+  {{topic.title}}
+{{/power-select-multiple}}
+
+<ul>
+  {{#each selected as |topic|}}
+    <li>{{topic.title}}</li>
+  {{/each}}
+</ul>

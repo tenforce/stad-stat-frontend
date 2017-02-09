@@ -2,7 +2,9 @@
 <div class="row">
 
   <div class="col s3 selections">
-    {{fact-selector changeTopics=(action "changeTopics")}}
+    {{fact-selector
+      selectedIds=selectedTopicIds
+      updateSelected=updateSelectedTopics}}
   </div>
 
   <div class="col s9 topics">
