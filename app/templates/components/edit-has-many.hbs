@@ -1,0 +1,10 @@
+{{ember-selectize
+  content=selectizeItems
+  optionValuePath="content.id"
+  optionLabelPath=optionLabelPath
+  selection=selectedItems
+  multiple=true
+  searchField=["body", "title"]
+  update-filter=(action "filterChanged")
+  create-item=(action "newItem")
+  placeholder=placeholder}}

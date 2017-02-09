@@ -1,6 +1,7 @@
 {
   "name": "stad-stat",
   "dependencies": {
-    "materialize": "0.97.6"
+    "materialize": "0.97.6",
+    "selectize": "miguelcobain/selectize.js#master"
   }
 }
