@@ -7,11 +7,16 @@
       updateSelected=updateSelectedTopics}}
   </div>
 
-  <div class="col s9 topics">
-    {{#liquid-bind topics as |topicsVersion|}}
-      {{#each topicsVersion key="id" as |topic|}}
-        <div class="topic" topic-id={{topic.title}} {{action "clickTopic" topic}}>
-          topics here!
+  <div class="col s9 values">
+    {{#liquid-bind values as |valuesVersion|}}
+      {{#each valuesVersion key="id" as |valuation|}}
+        <div class="valuation" value-id={{valuation.id}}>
+          <div class="value">{{valuation.value}}</div>
+          <ul class="topics">
+            {{#each valuation.topics as |topic|}}
+              {{topic.title}}
+            {{/each}}
+          </ul>
         </div>
       {{/each}}
     {{/liquid-bind}}
