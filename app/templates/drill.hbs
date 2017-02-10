@@ -1,3 +1,19 @@
-<h1>Drill down</h1>
+<div class="container">
+  <h1>Drill down</h1>
 
-{{outlet}}
+  There is the value {{model.value}} with the topics:
+
+  <ul>
+    {{#each model.topics as |topic|}}
+      <li>{{topic.title}}</li>
+    {{/each}}
+  </ul>
+
+  <h2>In the news</h2>
+
+  There are no linked articles to the current article.
+
+  <h2>People that watched this also looked at:</h2>
+
+  There are no related charts.
+</div>
