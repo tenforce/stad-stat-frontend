@@ -9,9 +9,9 @@ export default Ember.Route.extend({
   model(params) {
     if( params.topics && params.topics.length ){
       const joinedTopics = params.topics.map(
-        (topicId) => "filter[topics][id]=" + encodeURIComponent( topicId )
+        (topicId) => "filter[theme][topics][id]=" + encodeURIComponent( topicId )
       ).join('&');
-      return this.get('store').query( 'value', joinedTopics );
+      return this.get('store').query( 'region-theme', joinedTopics );
     } else {
       return this.get('store').findAll( 'value' );
     }

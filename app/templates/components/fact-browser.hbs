@@ -8,14 +8,17 @@
   </div>
 
   <div class="col s9 values">
-    {{#liquid-bind values as |valuesVersion|}}
-      {{#each valuesVersion key="id" as |valuation index|}}
-        {{#link-to 'drill' valuation value-id=valuation.id classNames="valuation"}}
-          <div class="value">{{valuation.value}}</div>
+    {{#liquid-bind regionThemes as |regionThemesVersion|}}
+      {{#each regionThemes key="id" as |regionTheme index|}}
+        {{#link-to 'drill' regionTheme value-id=regionTheme.id classNames="valuation"}}
+          <div class="value">{{#each regionTheme.values as |value|}}{{value}} {{/each}}</div>
           <ul class="topics">
-            {{#each valuation.topics as |topic|}}
+            {{regionTheme.title}}
+
+            {{#each regionTheme.theme.topics as |topic|}}
               {{topic.title}}
             {{/each}}
+
             <!-- TODO : Maybe actually instantiate them? Default charts have bogus values -->
             {{#if (eq index 1)}}
               {{default-line-chart}}
