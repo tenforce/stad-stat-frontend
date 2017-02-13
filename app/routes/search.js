@@ -8,8 +8,10 @@ export default Ember.Route.extend({
   },
   model(params) {
     if( params.topics && params.topics.length ){
-      const joinedTopics = params.topics.join(',');
-      return this.get('store').query( 'value', { "filter[topics][id]": joinedTopics } );
+      const joinedTopics = params.topics.map(
+        (topicId) => "filter[topics][id]=" + encodeURIComponent( topicId )
+      ).join('&');
+      return this.get('store').query( 'value', joinedTopics );
     } else {
       return this.get('store').findAll( 'value' );
     }
