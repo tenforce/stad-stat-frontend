@@ -51,6 +51,7 @@
     "ember-source": "^2.11.0",
     "ember-truth-helpers": "1.2.0",
     "ember-welcome-page": "^2.0.2",
+    "highcharts": "^5.0.7",
     "liquid-fire": "0.27.0",
     "loader.js": "^4.0.10",
     "node-sass": "^3.4.2"
