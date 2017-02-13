@@ -1,8 +1,8 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('topic', 'Unit | Model | topic', {
+moduleForModel('region', 'Unit | Model | region', {
   // Specify the other units that are required for this test.
-  needs: ['model:theme']
+  needs: ['model:region-theme']
 });
 
 test('it exists', function(assert) {
