@@ -9,13 +9,19 @@
 
   <div class="col s9 values">
     {{#liquid-bind values as |valuesVersion|}}
-      {{#each valuesVersion key="id" as |valuation|}}
+      {{#each valuesVersion key="id" as |valuation index|}}
         {{#link-to 'drill' valuation value-id=valuation.id classNames="valuation"}}
           <div class="value">{{valuation.value}}</div>
           <ul class="topics">
             {{#each valuation.topics as |topic|}}
               {{topic.title}}
             {{/each}}
+            <!-- TODO : Maybe actually instantiate them? Default charts have bogus values -->
+            {{#if (eq index 1)}}
+              {{default-line-chart}}
+            {{else}}
+              {{default-pie-chart}}
+            {{/if}}
           </ul>
         {{/link-to}}
       {{/each}}
