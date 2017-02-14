@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'div',
+  chartType: 'pie',
   classNames: ['pie-chart chart'],
 
   title: "Test pie chart",
@@ -20,10 +21,11 @@ export default Ember.Component.extend({
       }
     };
   }),
-  chartData: Ember.computed('regionTheme.values.@each.value', 'regionTheme.values.@each.year', 'regionTheme.title', function() {
+  chartData: Ember.computed('regionTheme.values.@each.value', 'regionTheme.values.@each.year', 'regionTheme.title', 'chartType', function() {
     if( this.get('regionTheme') && this.get('regionTheme.values') ){
       return [{
-        type: 'pie',
+        type: this.get('chartType'),
+        animation: true,
         name: this.get('regionTheme.title'),
         data: this.get('regionTheme.values').map(
           (value) => [value.get('year'), value.get('value')]
@@ -31,7 +33,8 @@ export default Ember.Component.extend({
       }];
     } else {
       return [{
-        type: 'pie',
+        type: this.get('chartType'),
+        animation: true,
         name: this.get('title'),
         data: [["≤4", 1], ["5-13", 2], ["14-17", 3], ["18-24", 4], ["25-44", 5], ["45-64", 6], ["≥65", 7]]
       }];
@@ -40,7 +43,7 @@ export default Ember.Component.extend({
   computedChartData: Ember.computed(function() {
     return [
       {
-        type: 'pie',
+        type: this.get('chartType'),
         name: this.get('title'),
         data: this.get('chartData')
       }
