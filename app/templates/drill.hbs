@@ -1,17 +1,20 @@
 <div class="container">
   <h1>Drill down</h1>
 
-  There is the value {{model.value}} with the topics:
+  <div class="topics">
+    <h2>Relevant topics</h2>
+    <ul>
+      {{#each model.theme.topics as |topic|}}
+        <li>{{topic.title}}</li>
+      {{/each}}
+    </ul>
+  </div>
 
-  <ul>
-    {{#each model.topics as |topic|}}
-      <li>{{topic.title}}</li>
-    {{/each}}
-  </ul>
+  <div class="news">
+    <h2>In the news</h2>
+    {{news-section}}
+  </div>
 
-  <h2>In the news</h2>
-
-  There are no linked articles to the current article.
   <div class="related-wrap">
     <div class="left-button" {{action "leftClick"}}>
       left
