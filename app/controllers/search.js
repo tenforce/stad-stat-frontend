@@ -11,7 +11,12 @@ export default Ember.Controller.extend({
 	  var topics = [];
 	  selected.forEach(function(sel)
 			   {
-			       var type = Ember.get(sel, 'modelName');
+			       var internalModel = sel;
+			       if(Ember.get(internalModel, '_internalModel') !== undefined)
+			       {
+				   internalModel = Ember.get(internalModel, '_internalModel');
+			       }
+			       var type = Ember.get(internalModel, 'modelName');
 			       if(type==="region")
 			       {
 				   regions.pushObject(sel);
