@@ -1,36 +1,45 @@
-<div class="container">
-  <h1>{{model.title}}</h1>
-  <div class="chart">
-    {{chart-single-value regionTheme=model value=model.values.firstObject}}
-  </div>
-  <div class="topics">
-    <h2>Relevant topics</h2>
-    <ul>
-      {{#each model.theme.topics as |topic|}}
-        <li>{{topic.title}}</li>
-      {{/each}}
-    </ul>
-  </div>
+<main class="app">
+  <aside class="app-aside">
+    <header class="app-header">
+      <h1><img src="../assets/img/logo.jpg" alt="logo"></h1>
+    </header>
 
-  <div class="news">
-    <h2>In the news</h2>
-    {{news-section}}
-  </div>
+    <section class="news">
+      <h2>Nieuws</h2>
+      <div class="news-section">
+        {{news-section}}
+      </div>
+    </section>
 
-  <div class="related-wrap">
-    <div class="left-button" {{action "leftClick"}}>
-      left
+    <div class="space"></div>
+  </aside>
+
+  <section class="app-main">
+    <header class="header">
+      <h2>{{model.title}}</h2>
+    </header>
+    <div class="content">
+      {{chart-single-value regionTheme=model value=model.values.firstObject}}
     </div>
-    <div class="related">
-      <h2>People that watched this also looked at:</h2>
-      <ul class="charts" style="left:{{leftOffset}}px;">
+    <div class="widgets">
+      <section class="widget">
+        <header>
+          <h3>More</h3>
+        </header>
+        <div class="tags">
+          {{#each model.theme.topics as |topic|}}
+            <span class="tag">{{topic.title}}</span>
+          {{/each}}
+        </div>
+      </section>
+      <section class="widget">
+        <header>
+          <h3>Relevant</h3>
+        </header>
         {{#each model.related as |related|}}
-          <li>{{default-line-chart}}</li>
+          <div>{{default-line-chart}}</div>
         {{/each}}
-      </ul>
+      </section>
     </div>
-    <div class="right-button" {{action "rightClick"}}>
-      right
-    </div>
-  </div>
-</div>
+  </section>
+</main>
