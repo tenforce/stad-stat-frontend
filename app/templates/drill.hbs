@@ -17,12 +17,12 @@
       <h2>{{model.title}}</h2>
     </header>
     <div class="content">
-      {{chart-single-value regionTheme=model value=model.values.firstObject}}
+      {{chart-zoomed-value regionTheme=model value=model.values.firstObject}}
     </div>
     <div class="widgets">
       <section class="widget">
         <header>
-          <h3>More</h3>
+          <h3>Topics</h3>
         </header>
         <div class="tags">
           {{#each model.theme.topics as |topic|}}
@@ -30,14 +30,24 @@
           {{/each}}
         </div>
       </section>
-      <section class="widget">
-        <header>
-          <h3>Relevant</h3>
-        </header>
-        {{#each model.related as |related|}}
-          <div>{{default-line-chart}}</div>
-        {{/each}}
+
+      <section class="widget related-wrap">
+        <div class="left-button" {{action "leftClick"}}>
+          left
+        </div>
+        <div class="related">
+          <h2>People that watched this also looked at:</h2>
+          <ul class="charts" style="left:{{leftOffset}}px;">
+            {{#each model.related as |related|}}
+              <li>{{default-line-chart}}</li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class="right-button" {{action "rightClick"}}>
+          right
+        </div>
       </section>
     </div>
   </section>
+
 </main>
