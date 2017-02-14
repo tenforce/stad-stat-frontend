@@ -1,20 +1,4 @@
-<div class="value">{{value.value}}</div>
 <ul class="topics">
-  [ {{#each regionTheme.values as |value|}} {{value.value}} {{/each}} ]
-  <p>{{regionTheme.title}}</p>
-
-  <ul>
-    {{#each regionTheme.theme.topics as |topic|}}
-      <li>{{topic.title}}</li>
-    {{/each}}
-  </ul>
-
-  {{!-- 
-  {{#if (eq index 1)}}
-    {{default-line-chart}}
-  {{else}}
-    {{default-pie-chart}}
-  {{/if}}
-  --}}
+  {{default-pie-chart regionTheme=regionTheme}}
 </ul>
 
