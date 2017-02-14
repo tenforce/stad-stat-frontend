@@ -19,3 +19,50 @@ $roboto-font-path: '../assets/';
     width: 49%;
     display: inline-block;
 }
+
+.related-wrap {
+    position: relative;
+    .left-button {
+        left: 0;
+        margin-left: -20px;
+        background-color: blue;
+        width: 20px;
+    }
+
+    .right-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: -20px;
+        background-color: blue;
+        width: 20px;
+    }
+    .left-button, .right-button {
+        position: absolute;
+        top: 0;
+        margin-top:10%;
+        height: 60%;
+        
+    }
+}
+
+.related {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    ul.charts {
+        width: 1000000px;
+        position:relative;
+        transition: left 1s;
+        -moz-transition: left 1s;
+        -webkit-transition: left 1s;
+        -o-transition: left 1s;
+        li {
+            width: 500px;
+            display: inline-block;
+        }
+    }
+}
+
+
+
