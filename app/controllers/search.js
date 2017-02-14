@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  queryParams:["topics"],
+  queryParams:["topics","regions"],
   topics:[],
+  regions:[],
   
   actions: {
     updateSelected(topics){
