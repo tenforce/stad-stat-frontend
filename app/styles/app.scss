@@ -423,3 +423,31 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     }
   }
 }
+.related-wrap {
+    li {
+        display: inline-block;
+    }
+
+    .related {
+        width: 100000000px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    ul.charts {
+        top: 0;
+        left: 0;
+        transition: left 1s;
+        -webkit-transition: left 1s;
+        -o-transition: left 1s;
+        -moz-transition: left 1s;
+    }
+
+    ul.charts {
+        position: relative;
+    }
+    .chart > div{
+        width: 400px;
+        height: 200px;
+    }
+}

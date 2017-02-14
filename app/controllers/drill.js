@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   leftOffset: 0,
-  chartSize: 500,
+  chartSize: 400,
   additionalTopics: [
     {
       title: "Verdeling inkomen"
