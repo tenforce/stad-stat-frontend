@@ -364,6 +364,10 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     ul.charts {
         top: 0;
         left: 0;
+        transition: left 1s;
+        -webkit-transition: left 1s;
+        -o-transition: left 1s;
+        -moz-transition: left 1s;
     }
 
     ul.charts {
