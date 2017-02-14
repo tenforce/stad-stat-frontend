@@ -15,10 +15,17 @@
   <section class="app-main">
     <header class="header">
       <h2>{{model.title}}</h2>
+      <div class="share">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-google-plus" aria-hidden="true"></i>
+      </div>
     </header>
+
     <div class="content">
       {{chart-zoomed-value regionTheme=model value=model.values.firstObject}}
     </div>
+
     <div class="widgets">
       <section class="widget">
         <header>
@@ -30,7 +37,7 @@
           {{/each}}
         </div>
       </section>
-      
+
       <section class="widget">
         <header>
           <h3>Topics</h3>
@@ -42,23 +49,24 @@
         </div>
       </section>
 
-      <section class="widget related-wrap">
-        <div class="left-button" {{action "leftClick"}}>
-          left
+      <section class="widget widget--fluid">
+        <header>
+          <h3>People that watched this also looked at</h3>
+        </header>
+
+        <div class="related-wrap">
+          <div class="left-button" {{action "leftClick"}}>left</div>
+          <div class="related">
+            <ul class="charts" style="left:{{leftOffset}}px;">
+              {{#each model.related as |related|}}
+                <li>{{default-line-chart}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          <div class="right-button" {{action "rightClick"}}>right</div>
         </div>
-        <div class="related">
-          <h2>People that watched this also looked at:</h2>
-          <ul class="charts" style="left:{{leftOffset}}px;">
-            {{#each model.related as |related|}}
-              <li>{{default-line-chart}}</li>
-            {{/each}}
-          </ul>
-        </div>
-        <div class="right-button" {{action "rightClick"}}>
-          right
-        </div>
+
       </section>
     </div>
   </section>
-
 </main>

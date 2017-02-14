@@ -1,19 +1,8 @@
-<div class="controls">
-  <button class="btn" {{action 'makePie'}}>pie</button>
-  <button class="btn" {{action 'makeBar'}}>bar</button>
-</div>
+<div class="single-chart">
+  <div class="controls">
+    <button class="btn" {{action 'makePie'}}>Pie</button>
+    <button class="btn" {{action 'makeBar'}}>Bar</button>
+  </div>
 
-{{default-chart regionTheme=regionTheme chartType=chartType}}
-
-<div class="widgets">
-  <section class="widget">
-    <header>
-      <h3>More</h3>
-    </header>
-    <div class="tags">
-      {{#each additionalTopics as |topic|}}
-        <span>{{topic.title}}</span>
-      {{/each}}
-    </div>
-  </section>
+  {{default-chart regionTheme=regionTheme chartType=chartType}}
 </div>
