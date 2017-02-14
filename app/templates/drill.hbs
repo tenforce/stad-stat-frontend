@@ -15,28 +15,57 @@
   <section class="app-main">
     <header class="header">
       <h2>{{model.title}}</h2>
+      <div class="share">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-google-plus" aria-hidden="true"></i>
+      </div>
     </header>
+
     <div class="content">
-      {{chart-single-value regionTheme=model value=model.values.firstObject}}
+      {{chart-zoomed-value regionTheme=model value=model.values.firstObject additional=selectedTopics}}
     </div>
+
     <div class="widgets">
       <section class="widget">
         <header>
-          <h3>More</h3>
+          <h3>Topics</h3>
         </header>
         <div class="tags">
-          {{#each model.theme.topics as |topic|}}
+          {{#each (await renderedTopics) as |topic|}}
             <span class="tag">{{topic.title}}</span>
           {{/each}}
         </div>
       </section>
+
       <section class="widget">
         <header>
-          <h3>Relevant</h3>
+          <h3>More</h3>
         </header>
-        {{#each model.related as |related|}}
-          <div>{{default-line-chart}}</div>
-        {{/each}}
+        <div class="tags clickable">
+          {{#each additionalTopics as |topic|}}
+            <span {{action 'selectTopic' topic}}>{{topic.title}}</span>
+          {{/each}}
+        </div>
+      </section>
+
+      <section class="widget widget--fluid">
+        <header>
+          <h3>People that watched this also looked at</h3>
+        </header>
+
+        <div class="related-wrap">
+          <a href="#" class="nav nav-left" {{action "leftClick"}}></a>
+          <a href="#" class="nav nav-right" {{action "rightClick"}}></a>
+
+          <div class="related">
+            <ul class="charts" style="left:{{leftOffset}}px;">
+              {{#each model.related as |related|}}
+                <li>{{default-chart chartType=line legend=false}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
       </section>
     </div>
   </section>

@@ -19,7 +19,9 @@ export default Ember.Component.extend({
         this.get('store').query( 'region', { filter: string } )
       ] ).then(
         ([topics,regions]) => {
-          return [].pushObjects(topics.content).pushObjects(regions.content);
+          return [].pushObjects(topics.content).pushObjects(regions.content).map(
+            (item) => item.getRecord()
+          );
         }
       );
     }
