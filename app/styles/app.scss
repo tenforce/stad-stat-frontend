@@ -507,7 +507,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
         .highcharts-color-2 > path {
             fill: #d90c0c;
         }
-        .highcharts-color-3 > path {
+        .highcharts-color-2 > path {
             fill: #e0600c;
         }
     }
@@ -520,13 +520,13 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     path.highcharts-data-label-connector.highcharts-color-3  {
         stroke: #e0600c;
     }
-    path.highcharts-label.highcharts-color-0 {
+    .highcharts-label.highcharts-color-0 > path {
         stroke: #ab072a !important;
     }
-    path.highcharts-label.highcharts-color-2 {
+    .highcharts-label.highcharts-color-2 > path{
         stroke: #d90c0c !important;
     }
-    path.highcharts-label.highcharts-color-3  {
+    .highcharts-label.highcharts-color-2 > path {
         stroke: #e0600c !important;
     }
 
