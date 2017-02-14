@@ -394,15 +394,23 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 }
 
 .tags {
+  &.clickable {
+    > span {
+      background-color: #EEE;
+      border: 1px solid #EEE;
+      cursor: pointer;
+    }
+  }
+
   > span {
     display: inline-block;
     font-size: 20px;
     font-weight: 300;
-    background-color: #EEE;
+    background-color: transparent;
+    border: 1px solid #444;
     padding: 5px 10px;
     border-radius: 3px;
     margin: 0 3px 5px 0;
-    cursor: pointer;
   }
 }
 

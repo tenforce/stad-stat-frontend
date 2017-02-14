@@ -31,7 +31,7 @@
         <header>
           <h3>More</h3>
         </header>
-        <div class="tags">
+        <div class="tags clickable">
           {{#each additionalTopics as |topic|}}
             <span {{action 'selectTopic' topic}}>{{topic.title}}</span>
           {{/each}}
