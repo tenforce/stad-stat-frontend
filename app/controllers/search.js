@@ -1,12 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  queryParams:["topics"],
+  queryParams:["topics","regions"],
   topics:[],
+  regions:[],
   
   actions: {
-    updateSelected(topics){
-      this.set('topics', topics.mapBy('id'))
+    updateSelected(topics, regions){
+      this.set('topics', topics.mapBy('id'));
+      this.set('regions', regions.mapBy('id'));
     }
   }
 });
