@@ -198,10 +198,11 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
       }
 
       .share {
-        display: inline;
+        display: inline-block;
         position: relative;
         top: -10px;
-        padding: 10px;
+        white-space: nowrap;
+        margin: 20px 10px;
 
         i {
           color: #C63D19;
@@ -276,6 +277,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     float: left;
     display: inline-block;
     width: 50%;
+    padding: 15px;
 
     &--fluid {
       width: 100%;
