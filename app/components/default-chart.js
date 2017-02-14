@@ -4,14 +4,18 @@ export default Ember.Component.extend({
   tagName: 'div',
   chartType: 'pie',
   classNames: ['pie-chart chart'],
+  legend: true,
 
   title: "Test pie chart",
-  chartOptions: Ember.computed('regionTheme.title', function() {
+  chartOptions: Ember.computed('regionTheme.title','legend', function() {
     return {
       chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false
+      },
+      legend: {
+        enabled: this.get('legend')
       },
       title: {
         text: this.get('regionTheme.title')
