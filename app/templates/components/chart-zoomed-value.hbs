@@ -1,0 +1,21 @@
+<div class="charts">
+  {{default-chart regionTheme=regionTheme chartType=chartType}}
+</div>
+<div class="controls">
+  <div class="chart-buttons">
+    <div class="pie" {{action 'makePie'}}>
+      pie button
+    </div>
+    <div class="bar" {{action 'makeBar'}}>
+      bar button
+    </div>
+  </div>
+  <div class="more-topics">
+    <h3>More topics</h3>
+    <ul class="more-topics">
+      {{#each additionalTopics as |topic|}}
+        <li class="topic">{{topic.title}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

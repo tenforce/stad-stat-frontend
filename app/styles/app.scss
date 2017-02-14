@@ -66,3 +66,43 @@ $roboto-font-path: '../assets/';
 
 
 
+.drill-container {
+    width: 1024px;
+    margin: 0 auto;
+    .main {
+        position: relative;
+    }
+
+    .charts {
+        width: 60%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .controls {
+        width: 35%;
+        display: inline-block;
+        vertical-align: top;
+
+        .pie, .bar {
+            border: solid 1px black;
+            padding: 5px;
+            display: inline-block;
+            width: 49%;
+            box-sizing: border-box;
+            cursor: hand;
+            cursor: pointer;
+        }
+
+        li.topic {
+            border: solid 1px black;
+            padding: 3px;
+            margin: 3px 0;
+            border-radius: 5px;
+            background-color: #EEE;
+            cursor: hand;
+            cursor: pointer;
+        }
+    }
+
+}
