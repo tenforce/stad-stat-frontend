@@ -14,6 +14,7 @@ export default Ember.Component.extend({
   }).on('init'),
 
   title: "Test pie chart",
+  hideTitle: false,
   chartOptions: Ember.computed('regionTheme.title','legend', function() {
     return {
       chart: {
@@ -30,7 +31,7 @@ export default Ember.Component.extend({
         enabled: this.get('legend')
       },
       title: {
-        text: this.get('regionTheme.title') || this.get('chartData')[0].name || this.get('title')
+        text: (!this.get('hideTitle')) && (this.get('regionTheme.title') || this.get('chartData')[0].name || this.get('title'))
       },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.y}</b>'
