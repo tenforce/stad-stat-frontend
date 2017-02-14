@@ -10,7 +10,7 @@
   <div class="col s9 values">
     {{#liquid-bind regionThemes as |regionThemesVersion|}}
       {{#each regionThemes key="id" as |regionTheme index|}}
-        {{#link-to 'drill' regionTheme value-id=regionTheme.id classNames="valuation"}}
+        {{#link-to 'drill' regionTheme.id value-id=regionTheme.id classNames="valuation"}}
           {{chart-single-value regionTheme=regionTheme value=regionTheme.values.firstObject idx=index}}
         {{/link-to}}
       {{/each}}
