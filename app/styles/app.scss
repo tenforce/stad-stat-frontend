@@ -11,6 +11,24 @@ body {
 
 /* Resets */
 
+.btn {
+  background-color: #EEE;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin: 5px;
+  color: #000;
+  letter-spacing: normal;
+  text-transform: none;
+  line-height: 1.2;
+  box-shadow: none;
+
+  &:hover {
+    background: #EEE;
+    background-color: #EEE;
+    color: inherit;
+  }
+}
+
 .liquid-container,
 .liquid-child {
   overflow: visible;
@@ -135,6 +153,12 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
           border-top: 1px solid rgba(0, 0, 0, 0.23);
           padding: 30px 0 0;
           margin: 20px 0;
+
+          .highcharts-title {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 300;
+            font-size: 22px;
+          }
 
           .highcharts-background {
             fill: #AB072A;
