@@ -45,7 +45,7 @@ export default Ember.Controller.extend({
   actions: {
     selectTopic: function(topic){
       this.get('additionalTopics').removeObject(topic);
-      this.get('selectedTopics').addObject(topic);
+      this.set('selectedTopics', [].addObjects(this.get('selectedTopics')).addObject(topic));
     },
     rightClick: function(){
       var relatedSize = (this.get('model.related.length') - 1) * (this.get('chartSize'));
