@@ -55,7 +55,9 @@
         </header>
 
         <div class="related-wrap">
-          <div class="left-button" {{action "leftClick"}}>left</div>
+          <a href="#" class="nav nav-left" {{action "leftClick"}}></a>
+          <a href="#" class="nav nav-right" {{action "rightClick"}}></a>
+
           <div class="related">
             <ul class="charts" style="left:{{leftOffset}}px;">
               {{#each model.related as |related|}}
@@ -63,7 +65,6 @@
               {{/each}}
             </ul>
           </div>
-          <div class="right-button" {{action "rightClick"}}>right</div>
         </div>
 
       </section>
