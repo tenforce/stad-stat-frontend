@@ -1,14 +1,29 @@
-<div class="container">
-  <h1>Feitelijk leuven</h1>
+<main class="app">
+  <aside class="app-aside">
+    <header class="app-header">
+      <h1>Feitelijk</h1>
+    </header>
 
-  <h2>Nieuws</h2>
+    <section class="news">
+      <h2>Nieuws</h2>
+      <div class="news-section">
+        {{news-section}}
+      </div>
+    </section>
 
-  {{news-section}}
+    <div class="space"></div>
+  </aside>
 
-  <h2>Je weg rond de stad</h2>
-
-</div>
-
-{{fact-browser updateSelectedTopics=(action "updateSelected") selectedTopicIds=topics selectedRegionIds=regions regionThemes=model}}
-
-{{outlet}}
+  <section class="app-main">
+    <header class="header">
+      <h2>Je weg rond de stad</h2>
+      <p>Hier komt informatie met de feitelijke gegevens over de stad.  Deze staat buiten de div zodat we de gehele schermbreedte nog kunnen gebruiken indien nodig.</p>
+    </header>
+    <div class="content">
+      {{fact-browser updateSelectedTopics=(action "updateSelected") selectedTopicIds=topics selectedRegionIds=regions regionThemes=model}}
+    </div>
+    <div class="outlet">
+      {{outlet}}
+    </div>
+  </section>
+</main>
