@@ -22,12 +22,23 @@ body {
   border: 0;
   border-radius: 0;
   box-shadow: 0 10px 30px 0px #CCC;
+
+  &:after {
+    content: "\f002";
+    position: absolute;
+    font-family: 'FontAwesome';
+    top: 0;
+    right: 0;
+    margin: 15px 16px 0 0;
+    color: #CCC;
+    font-size: 20px;
+  }
 }
 
 input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
   margin: 0;
   border-bottom: none;
-  padding: 10px 20px;
+  padding: 10px 46px 10px 20px;
   box-sizing: border-box;
   font-size: 24px;
   height: auto;
