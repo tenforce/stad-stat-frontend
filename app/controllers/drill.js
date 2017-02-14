@@ -3,6 +3,24 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   leftOffset: 0,
   chartSize: 500,
+  additionalTopics: [
+    {
+      title: "Verdeling inkomen"
+    },
+    {
+      title: "Oppervlakte woningen"
+    },
+    {
+      title: "Levenskwaliteit"
+    },
+    {
+      title: "Leeftijd"
+    },
+    {
+      title: "Opleidingsniveau"
+    }
+  ],
+
   actions: {
     rightClick: function(){
       var relatedSize = (this.get('model.related.length') - 1) * (this.get('chartSize'));
