@@ -11,21 +11,7 @@
     {{#liquid-bind regionThemes as |regionThemesVersion|}}
       {{#each regionThemes key="id" as |regionTheme index|}}
         {{#link-to 'drill' regionTheme value-id=regionTheme.id classNames="valuation"}}
-          <div class="value">{{#each regionTheme.values as |value|}}{{value}} {{/each}}</div>
-          <ul class="topics">
-            {{regionTheme.title}}
-
-            {{#each regionTheme.theme.topics as |topic|}}
-              {{topic.title}}
-            {{/each}}
-
-            <!-- TODO : Maybe actually instantiate them? Default charts have bogus values -->
-            {{#if (eq index 1)}}
-              {{default-line-chart}}
-            {{else}}
-              {{default-pie-chart}}
-            {{/if}}
-          </ul>
+          {{chart-single-value regionTheme=regionTheme value=regionTheme.values.firstObject idx=index}}
         {{/link-to}}
       {{/each}}
     {{/liquid-bind}}

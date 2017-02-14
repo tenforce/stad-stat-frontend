@@ -13,7 +13,7 @@ export default Ember.Route.extend({
       ).join('&');
       return this.get('store').query( 'region-theme', joinedTopics );
     } else {
-      return this.get('store').findAll( 'value' );
+      return this.get('store').findAll( 'region-theme' );
     }
   }
 });
