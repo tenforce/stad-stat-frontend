@@ -1,6 +1,8 @@
-<div class="controls">
-  <button class="btn" {{action 'makePie'}}>pie</button>
-  <button class="btn" {{action 'makeBar'}}>bar</button>
-</div>
+<div class="single-chart">
+  <div class="controls">
+    <button class="btn" {{action 'makePie'}}>Pie</button>
+    <button class="btn" {{action 'makeBar'}}>Bar</button>
+  </div>
 
-{{default-chart regionTheme=regionTheme chartType=chartType}}
+  {{default-chart regionTheme=regionTheme chartType=chartType}}
+</div>

@@ -17,14 +17,17 @@ body {
   border-radius: 3px;
   margin: 5px;
   color: #000;
+  font-weight: 300;
   letter-spacing: normal;
   text-transform: none;
   line-height: 1.2;
   box-shadow: none;
 
+  &:focus,
   &:hover {
     background: #EEE;
     background-color: #EEE;
+    box-shadow: none;
     color: inherit;
   }
 }
@@ -122,7 +125,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
   .app-aside {
     position: relative;
     z-index: 1;
-    width: 500px;
+    width: 400px;
     float: left;
     padding: 2%;
     background-color: #AB072A;
@@ -139,8 +142,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     }
 
     .news {
-      padding: 0 50px 0 10px;
-
       h2 {
         font-size: 34px;
         font-weight: 300;
@@ -180,8 +181,8 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
   .app-main {
     position: relative;
     z-index: 2;
-    margin: 0 0 0 500px;
-    padding: 5%;
+    margin: 0 0 0 400px;
+    padding: 2% 5%;
     background-color: #FFF;
     box-shadow: 0 0 40px 15px rgba(0, 0, 0, 0.2);
 
@@ -189,10 +190,25 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
       margin: 0 0 30px 0;
 
       h2 {
+        display: inline;
         margin: 5px 0;
         font-weight: 100;
         font-size: 48px;
         line-height: 1.2;
+      }
+
+      .share {
+        display: inline-block;
+        position: relative;
+        top: -10px;
+        white-space: nowrap;
+        margin: 20px 10px;
+
+        i {
+          color: #C63D19;
+          padding: 0 3px;
+          cursor: pointer;
+        }
       }
 
       p {
@@ -204,8 +220,15 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     }
 
     .content {
-      .filter {
+      .single-chart {
+        .controls {
+          text-align: center;
+          margin-top: 70px;
 
+          .btn {
+            padding: 5px 100px;
+          }
+        }
       }
 
       .results {
@@ -242,11 +265,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 
     .widgets {
       padding: 10% 0 0 0;
-
-      .widget {
-        display: inline-block;
-        width: 50%;
-      }
     }
   }
 }
@@ -257,6 +275,13 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 
   .widget {
     float: left;
+    display: inline-block;
+    width: 50%;
+    padding: 15px;
+
+    &--fluid {
+      width: 100%;
+    }
 
     header {
       h3 {
