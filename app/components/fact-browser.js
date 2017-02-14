@@ -41,9 +41,6 @@ export default Ember.Component.extend({
   actions: {
     clickTopic() {
       this.generateTopics();
-    },
-    changeTopics(newTopics){
-      this.set('topics', newTopics);
     }
   }
 });

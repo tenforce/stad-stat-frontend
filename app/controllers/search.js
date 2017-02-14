@@ -6,8 +6,9 @@ export default Ember.Controller.extend({
   regions:[],
   
   actions: {
-    updateSelected(topics){
-      this.set('topics', topics.mapBy('id'))
+    updateSelected(topics, regions){
+      this.set('topics', topics.mapBy('id'));
+      this.set('regions', regions.mapBy('id'));
     }
   }
 });
