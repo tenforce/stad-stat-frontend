@@ -17,7 +17,7 @@
       <h2>{{model.title}}</h2>
     </header>
     <div class="content">
-      {{chart-zoomed-value regionTheme=model value=model.values.firstObject}}
+      {{chart-zoomed-value regionTheme=model value=model.values.firstObject additional=selectedTopics}}
     </div>
     <div class="widgets">
       <section class="widget">
@@ -26,7 +26,7 @@
         </header>
         <div class="tags">
           {{#each additionalTopics as |topic|}}
-            <span>{{topic.title}}</span>
+            <span {{action 'selectTopic' topic}}>{{topic.title}}</span>
           {{/each}}
         </div>
       </section>
@@ -36,7 +36,7 @@
           <h3>Topics</h3>
         </header>
         <div class="tags">
-          {{#each model.theme.topics as |topic|}}
+          {{#each (await renderedTopics) as |topic|}}
             <span class="tag">{{topic.title}}</span>
           {{/each}}
         </div>
