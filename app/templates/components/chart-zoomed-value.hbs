@@ -1,16 +1,9 @@
-<div class="charts">
-  {{default-chart regionTheme=regionTheme chartType=chartType}}
-</div>
 <div class="controls">
-  <div class="chart-buttons">
-    <div class="pie" {{action 'makePie'}}>
-      pie button
-    </div>
-    <div class="bar" {{action 'makeBar'}}>
-      bar button
-    </div>
-  </div>
+  <button class="btn" {{action 'makePie'}}>pie</button>
+  <button class="btn" {{action 'makeBar'}}>bar</button>
 </div>
+
+{{default-chart regionTheme=regionTheme chartType=chartType}}
 
 <div class="widgets">
   <section class="widget">
