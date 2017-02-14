@@ -21,11 +21,16 @@ export default Ember.Component.extend({
         plotBorderWidth: null,
         plotShadow: false
       },
+      yAxis: {
+        title: {
+          text: false
+        }
+      },
       legend: {
         enabled: this.get('legend')
       },
       title: {
-        text: this.get('regionTheme.title')
+        text: this.get('regionTheme.title') || this.get('chartData')[0].name || this.get('title')
       },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.y}</b>'

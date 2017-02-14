@@ -61,7 +61,7 @@
           <div class="related">
             <ul class="charts" style="left:{{leftOffset}}px;">
               {{#each model.related as |related|}}
-                <li>{{default-chart chartType=line legend=false}}</li>
+                <li>{{default-chart chartType=line legend=false chartData=related}}</li>
               {{/each}}
             </ul>
           </div>

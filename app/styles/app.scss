@@ -469,3 +469,65 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
         height: 200px;
     }
 }
+.app-main {
+    .highcharts-series-group, .highcharts-legend {
+        .highcharts-color-0 {
+            fill: #ab072a;
+            stroke: #ab072a;
+        }
+        .highcharts-color-0 > path {
+            stroke: #ab072a;
+            stroke-width: 2;
+        }
+        .highcharts-color-0 > rect {
+            fill: #ab072a;
+        }
+
+        .highcharts-color-2 {
+            fill: #d90c0c;
+            stroke: white;
+        }
+        .highcharts-color-2 > path {
+            stroke:  #d90c0c;
+            stroke-width: 2;
+        }
+        .highcharts-color-2 {
+            fill: #e0600c;
+            stroke: white;
+        }
+        .highcharts-color-2 > path {
+            stroke:  #e0600c;
+            stroke-width: 2;
+        }
+    }
+    .highcharts-legend {
+        * {
+            stroke-width: 0 !important;
+        }
+        .highcharts-color-2 > path {
+            fill: #d90c0c;
+        }
+        .highcharts-color-3 > path {
+            fill: #e0600c;
+        }
+    }
+    .highcharts-data-label-connector.highcharts-color-0 {
+        stroke: #ab072a;
+    }
+    .highcharts-data-label-connector.highcharts-color-2 {
+        stroke: #d90c0c;
+    }
+    path.highcharts-data-label-connector.highcharts-color-3  {
+        stroke: #e0600c;
+    }
+    path.highcharts-label.highcharts-color-0 {
+        stroke: #ab072a !important;
+    }
+    path.highcharts-label.highcharts-color-2 {
+        stroke: #d90c0c !important;
+    }
+    path.highcharts-label.highcharts-color-3  {
+        stroke: #e0600c !important;
+    }
+
+}
