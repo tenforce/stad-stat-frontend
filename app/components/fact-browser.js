@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import Topic from '../models/topic';
 
 export default Ember.Component.extend({
   topics: null,

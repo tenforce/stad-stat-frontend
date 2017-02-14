@@ -21,7 +21,7 @@ export default Ember.Component.extend({
         ([topics,regions]) => {
           return [].pushObjects(topics.content).pushObjects(regions.content);
         }
-      )
+      );
     }
   }
 });

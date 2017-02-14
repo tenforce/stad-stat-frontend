@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.JSONAPIAdapter.extend({
@@ -5,7 +6,7 @@ export default DS.JSONAPIAdapter.extend({
   query(store, type, query) {
     var url = this.buildURL(type.modelName, null, null, 'query', undefined);
 
-    if (this.sortQueryParams && Ember.typeOf( query ) != 'string') {
+    if (this.sortQueryParams && Ember.typeOf( query ) !== 'string') {
       query = this.sortQueryParams(query);
     }
 
