@@ -10,12 +10,17 @@
       bar button
     </div>
   </div>
-  <div class="more-topics">
-    <h3>More topics</h3>
-    <ul class="more-topics">
+</div>
+
+<div class="widgets">
+  <section class="widget">
+    <header>
+      <h3>More</h3>
+    </header>
+    <div class="tags">
       {{#each additionalTopics as |topic|}}
-        <li class="topic">{{topic.title}}</li>
+        <span>{{topic.title}}</span>
       {{/each}}
-    </ul>
-  </div>
+    </div>
+  </section>
 </div>
