@@ -62,6 +62,10 @@ body {
   }
 
   .ember-power-select-multiple-options {
+    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+      min-width: 300px !important;
+    }
+
     .ember-power-select-multiple-option {
       position: relative;
       border: 0;
@@ -69,9 +73,9 @@ body {
       font-size: 20px;
       font-weight: 300;
       background-color: #EEE;
-      padding: 5px 10px;
+      padding: 5px 29px 5px 10px;
       border-radius: 3px;
-      margin: 5px 2px;
+      margin: 3px;
 
       .ember-power-select-multiple-remove-btn {
         cursor: pointer;
@@ -306,6 +310,75 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
         font-weight: 300;
         margin: 20px 10px;
       }
+    }
+  }
+}
+
+.related-wrap {
+  &:hover {
+      .nav {
+        opacity: 1;
+      }
+  }
+
+  .nav {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background-color: rgb(238, 238, 238);
+    z-index: 9;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+
+    &:before {
+      font-family: 'FontAwesome';
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      font-size: 22px;
+      line-height: 1;
+      margin: -11px 0 0 -4px;
+    }
+
+    &-left {
+      left: 0;
+
+      &:before {
+        content: "\f104";
+      }
+    }
+
+    &-right {
+      right: 0;
+
+      &:before {
+        content: "\f105";
+      }
+    }
+  }
+
+
+  .left-button {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    background-color: rgb(238, 238, 238);
+    z-index: 9;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+
+    &:before {
+      content: "\f104";
+      font-family: 'FontAwesome';
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      font-size: 22px;
+      line-height: 1;
+      margin: -11px 0 0 -4px;
     }
   }
 }
