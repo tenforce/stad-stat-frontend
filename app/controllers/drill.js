@@ -28,9 +28,11 @@ export default Ember.Controller.extend({
   //faking stuff here
   renderedTopics: Ember.computed('selectedTopics.@each.title', 'model.theme.topics', function(){
     var topics = this.get('model.theme.topics');
-    var selected = this.get('selectedTopics')
+    var selected = this.get('selectedTopics');
     if(!topics){
-      return new Ember.RSVP.Promise(function(resolve){ resolve(selected) });;
+      return new Ember.RSVP.Promise(function(resolve) {
+        resolve(selected);
+      });
     }
     return topics.then(function(result){
 
